@@ -1,0 +1,30 @@
+name: semantic-rag-ci
+
+on:
+  push:
+    paths:
+      - "apps/04-semantic-rag-service/**"
+  pull_request:
+    paths:
+      - "apps/04-semantic-rag-service/**"
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/04-semantic-rag-service
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv python install 3.13
+      - run: uv sync --dev --python 3.13
+      - run: uv run pytest
+      - run: uv run ruff format --check src tests scripts
+      - run: uv run ruff check src tests scripts
+      - run: uv run pyright

@@ -1,0 +1,39 @@
+{
+  "documents": [
+    {
+      "id": "refunds",
+      "title": "Refund policy",
+      "text": "Customers may request a refund within 30 days of the purchase date. Include the receipt when contacting support."
+    },
+    {
+      "id": "security",
+      "title": "Security policy",
+      "text": "Multi-factor authentication is required for administrator accounts. Recovery codes must be stored offline."
+    },
+    {
+      "id": "retention",
+      "title": "Data retention",
+      "text": "Support tickets are retained for 90 days, after which they are deleted from the active system."
+    }
+  ],
+  "questions": [
+    {
+      "question": "How long can customers request a refund?",
+      "document_id": "refunds",
+      "expected_term": "30 days",
+      "answerable": true
+    },
+    {
+      "question": "What is required for administrator accounts?",
+      "document_id": "security",
+      "expected_term": "Multi-factor authentication",
+      "answerable": true
+    },
+    {
+      "question": "What is the office cafeteria menu next year?",
+      "document_id": null,
+      "expected_term": null,
+      "answerable": false
+    }
+  ]
+}
