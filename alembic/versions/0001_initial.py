@@ -16,6 +16,8 @@ depends_on = None
 
 def upgrade() -> None:
     bind = op.get_bind()
+    if bind.dialect.name == "postgresql":
+        op.execute("CREATE EXTENSION IF NOT EXISTS vector")
     Base.metadata.create_all(bind=bind)
 
 

@@ -8,10 +8,12 @@ prompt/citation handling.
 
 ## Reporting
 
-Please do not open a public issue for a suspected vulnerability. Send a private
-report to the repository maintainers with a description, reproduction steps,
-impact, and a proposed mitigation. Remove credentials and personal data from
-reports.
+Please do not open a public issue for a suspected vulnerability. Once this
+repository is published, use its GitHub **Security** tab and **Report a
+vulnerability** form. If private reporting is not enabled yet, contact the
+repository maintainer through their GitHub profile before sharing details. Include
+a description, reproduction steps, impact, and proposed mitigation. Remove
+credentials and personal data from reports.
 
 ## Deployment guidance
 

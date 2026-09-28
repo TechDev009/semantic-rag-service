@@ -26,8 +26,7 @@ is stored separately. No LangChain dependency is required.
 Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-cd apps/04-semantic-rag-service
-uv sync --dev
+uv sync --locked
 uv run uvicorn semantic_rag.main:app --reload
 ```
 
@@ -157,8 +156,13 @@ uv run ruff check src tests scripts
 uv run pyright
 ```
 
-Tests never call paid providers. Docker examples are provided in
-`docker-compose.yml`; CI runs the offline checks only.
+Tests never call paid providers. To exercise the PostgreSQL/pgvector example stack:
+
+```bash
+docker compose up --build
+```
+
+CI runs the offline checks only.
 
 ## Limitations
 
@@ -169,3 +173,10 @@ background ingestion, document deletion, OCR, ACL filtering, reranking model,
 or prompt/tokenizer-specific budget accounting. PostgreSQL deployments should
 use Alembic migrations, connection pooling, monitoring, and a dimension-specific
 vector migration before changing embedding models.
+
+## Public release / status
+
+- **Local quickstart:** Run `uv sync --locked` and start Uvicorn with the steps in [Local quickstart](#local-quickstart); the default SQLite/fake-provider path needs no credentials.
+- **CI/tests:** GitHub Actions runs pytest, Ruff formatting and lint checks, and Pyright; the offline evaluation script is also documented in [Evaluation](#evaluation).
+- **Limitations:** The local embedding provider is a stable feature hash, and the service has no authentication, ACLs, background ingestion, OCR, or built-in document deletion; see [Limitations](#limitations).
+- **Production:** Real production deployment requires operator-managed provider/database credentials, security controls, and cloud/deployment infrastructure; this repository does not provide a hosted service.

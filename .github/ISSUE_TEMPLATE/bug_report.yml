@@ -1,0 +1,82 @@
+name: Bug report
+description: Report a reproducible problem with the project
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. Do not report security
+        vulnerabilities in this public form. Use the private security contact
+        described in [SECURITY.md](../../SECURITY.md) instead.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Bug summary
+      description: What went wrong? Include the endpoint, provider, retrieval step, or migration involved.
+      placeholder: A concise description of the unexpected behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest repeatable steps and use a minimal synthetic document or dataset when possible.
+      placeholder: |
+        1. Start the service with ...
+        2. Create or query ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include operating system, Python version, project version or commit, installation method, database, provider, and relevant configuration.
+      placeholder: |
+        OS:
+        Python:
+        Version/commit:
+        Installation:
+        Database/providers:
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or traceback
+      description: Paste relevant logs or a traceback. Remove API keys, credentials, personal data, document text, and confidential input before posting.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I have searched existing issues for duplicates.
+          required: true
+        - label: I have removed secrets and sensitive data from this report.
+          required: true

@@ -1,0 +1,50 @@
+name: Feature request
+description: Suggest an improvement or new capability
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the user need and keep the proposal focused on this repository.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What problem would this address, and who experiences it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior, provider, retrieval path, or interface you would like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What workarounds or other approaches have you considered?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and impact
+      description: Explain expected API, schema, migration, provider, deployment, compatibility, or security impact.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add examples or other context that does not contain secrets, credentials, or private documents.
+    validations:
+      required: false
